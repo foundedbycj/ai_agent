@@ -1,5 +1,5 @@
 import express from 'express'
-
+import '../models/wo'
 
 const router = express.Router()
 
@@ -13,6 +13,7 @@ router.get ('/:id',(req,res)=>{
 })
 
 router.post('/',(req,res)=>{
+    const {title,load,reps} = req.body  
     res.json({mssg:'Post a new wrokout'})
 })
 
