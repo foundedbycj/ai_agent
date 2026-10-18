@@ -1,21 +1,14 @@
 import express from 'express'
-import '../models/wo'
-
+const controller = require('../controller/workoutController')
+const Workout = require('../models/wo')
 const router = express.Router()
 
 
-router.get ('/',(req,res)=>{
-    res.json({mssg:'GET ALL WORKOUT MFFS'})
-})
+router.get ('/',controller.getWorkouts)
 
-router.get ('/:id',(req,res)=>{
-    res.json({mssg:'Single wrkout'})
-})
+router.get ('/:id',controller.getWorkout)
 
-router.post('/',(req,res)=>{
-    const {title,load,reps} = req.body  
-    res.json({mssg:'Post a new wrokout'})
-})
+router.post('/',controller.createWorkout)
 
 
 router.delete('/:id',(req,res)=>{
