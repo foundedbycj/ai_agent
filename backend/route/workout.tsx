@@ -11,13 +11,9 @@ router.get ('/:id',controller.getWorkout)
 router.post('/',controller.createWorkout)
 
 
-router.delete('/:id',(req,res)=>{
-    res.json({mssg:'Delete a new wrokout'})
-})
+router.delete('/:id',controller.deleteWorkout)
 
 
-router.patch('/:id',(req,res)=>{
-    res.json({mssg: 'update a new wrokout'})
-})
+router.patch('/:id',controller.updateWorkout)
 
 module.exports = router
